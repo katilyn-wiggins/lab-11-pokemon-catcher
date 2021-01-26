@@ -1,4 +1,4 @@
-import * as pokemon from './data.js';
+import pokemon from './data.js';
 import { incremementCaught, incrementSeen } from './localStorageUtils.js';
 
 let numberOfTurns = 0;
@@ -8,6 +8,17 @@ export function getRandomPokemon() {
     const randomIndex = Math.floor(Math.random() * pokemon.length);
 
     return pokemon[randomIndex];
+}
+
+
+export function findByUnId(id, array) {
+
+    for (let item of array) {
+
+        if (item._id === id) {
+            return item;
+        }
+    }
 }
 
 //renders one image by creating an img element inside of the div and adds click handler to the images 
@@ -70,15 +81,6 @@ export function setThreePokemon() {
 }
 
 
-export function findByUnId(id, array) {
-
-    for (let item of array) {
-
-        if (item._id === id) {
-            return item;
-        }
-    }
-}
 
 // export function name(array, id) {
 //     for (let item of array) {

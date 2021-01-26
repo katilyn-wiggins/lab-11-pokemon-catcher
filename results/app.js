@@ -1,18 +1,16 @@
-import * as pokemon from '../data.js';
+import pokemon from '../data.js';
+import { getPokeStats } from '../localStorageUtils.js';
 import { findByUnId } from '../utils.js';
-import { renderTable } from './renderTableItems.js';
+import { renderTableRow } from './renderTableItems.js';
+
+const table = document.querySelector('table');
+let stats = getPokeStats();
 
 
-const POKESTATS = 'POKESTATS';
+for (const stat of stats) {
 
-let stats = JSON.parse(localStorage.getItem(POKESTATS));
-let id = stats._id;
+    const tableRow = renderTableRow(stat);
 
+    table.append(tableRow);
 
-for (let stat of stats) {
-    const poke = findByUnId(id, pokemon);
-
-    const tableRow = renderTable(stat, poke);
-
-    tableRow.append(tableRow);
 }

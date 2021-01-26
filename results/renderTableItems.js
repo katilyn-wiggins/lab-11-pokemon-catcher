@@ -1,32 +1,28 @@
-import * as pokemon from '../data.js';
+import pokemon from '../data.js';
 import { findByUnId } from '../utils.js';
-const POKESTATS = 'POKESTATS';
+// const POKESTATS = 'POKESTATS';
 
-let stats = JSON.parse(localStorage.getItem(POKESTATS));
-
-const id = stats._id;
-
-export function renderTable(stats, pokemon) {
+export function renderTableRow(pokeItem) {
 
     const tableRow = document.createElement('tr');
     tableRow.classList.add('table-row');
 
-    // const pokeName = document.createElement('td');
-    // pokeName.classList.add('pokemon-name');
-    // pokeName.textContent = name(pokemon, id);
-
-    const pokeId = document.createElement('td');
-    pokeId.classList.add('poke-id');
-    pokeId.textContent = findByUnId(id, pokemon);
+    const pokemonObj = findByUnId(pokeItem._id, pokemon);
+    const pokeName = document.createElement('td');
+    pokeName.classList.add('poke-name');
+    pokeName.textContent = pokemonObj.pokemon;
 
     const timesSeen = document.createElement('td');
     timesSeen.classList.add('times-seen');
-    timesSeen.textContent = stats.seen;
+    timesSeen.textContent = pokeItem.seen;
 
     const timesCaught = document.createElement('td');
     timesCaught.classList.add('times-caught');
-    timesCaught.textContent = stats.caught;
+    timesCaught.textContent = pokeItem.caught;
 
-    tableRow.append(pokeId, timesSeen, timesCaught);
+    tableRow.append(pokeName, timesSeen, timesCaught);
     return tableRow;
+
 }
+
+

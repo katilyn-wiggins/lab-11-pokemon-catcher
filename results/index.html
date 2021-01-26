@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
     <title>Document</title>
 </head>
 
@@ -19,15 +21,17 @@
         </div>
     </header>
     <main>
+        <canvas id="myChart"></canvas>
         <section class="poke-buttons">
-            <table>
+            <!-- <table>
                 <tr>
                     <th>Pokemon</th>
                     <th>ID</th>
                     <th>Times Encountered</th>
                     <th>Times Caught</th>
                 </tr>
-            </table>
+            </table> -->
+
             <!-- <button id="p-button">Place Order</button>
             <button id="home">Back To Home</button> -->
         </section>
@@ -36,7 +40,7 @@
         <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
     </footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="./results.js"></script>
 </body>
 
 </html>
