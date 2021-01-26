@@ -1,6 +1,5 @@
 # EDIT-THIS-README
 
-
 How to do this lab: 
 
 1. download pokedex 
@@ -17,8 +16,5 @@ How to do this lab:
 5. make results appear on different page 
     - after 10 clicks, redirect to results page 
     - display total restults of seen and captured 
-
-
-
 
 
