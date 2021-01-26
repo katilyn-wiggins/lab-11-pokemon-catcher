@@ -1,4 +1,4 @@
-import pokemon from './data.js';
+import * as pokemon from './data.js';
 import { incremementCaught, incrementSeen } from './localStorageUtils.js';
 
 let numberOfTurns = 0;
@@ -70,12 +70,21 @@ export function setThreePokemon() {
 }
 
 
-export function findByUnId(array, id) {
+export function findByUnId(id, array) {
+
     for (let item of array) {
-        if (item._id === id) return item;
+
+        if (item._id === id) {
+            return item;
+        }
     }
 }
 
+// export function name(array, id) {
+//     for (let item of array) {
+//         if (item._id === id) return item.pokemon;
+//     }
+// }
 
 
 

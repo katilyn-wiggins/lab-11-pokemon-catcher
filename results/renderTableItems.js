@@ -1,23 +1,32 @@
+import * as pokemon from '../data.js';
+import { findByUnId } from '../utils.js';
+const POKESTATS = 'POKESTATS';
 
-export function renderCart(cart, jewelry) {
+let stats = JSON.parse(localStorage.getItem(POKESTATS));
 
-    let quantity = cart.quantity;
+const id = stats._id;
+
+export function renderTable(stats, pokemon) {
 
     const tableRow = document.createElement('tr');
     tableRow.classList.add('table-row');
 
-    const itemName = document.createElement('td');
-    itemName.classList.add('item-name');
-    itemName.textContent = jewelry.name;
+    // const pokeName = document.createElement('td');
+    // pokeName.classList.add('pokemon-name');
+    // pokeName.textContent = name(pokemon, id);
 
-    const itemQuantity = document.createElement('td');
-    itemQuantity.classList.add('item-quantity');
-    itemQuantity.textContent = quantity;
+    const pokeId = document.createElement('td');
+    pokeId.classList.add('poke-id');
+    pokeId.textContent = findByUnId(id, pokemon);
 
-    const itemTotalPrice = document.createElement('td');
-    itemTotalPrice.classList.add('item-total-price');
-    itemTotalPrice.textContent = `$${calcItemTotal(quantity, jewelry.price)}`;
+    const timesSeen = document.createElement('td');
+    timesSeen.classList.add('times-seen');
+    timesSeen.textContent = stats.seen;
 
-    tableRow.append(itemName, itemQuantity, itemTotalPrice);
+    const timesCaught = document.createElement('td');
+    timesCaught.classList.add('times-caught');
+    timesCaught.textContent = stats.caught;
+
+    tableRow.append(pokeId, timesSeen, timesCaught);
     return tableRow;
 }

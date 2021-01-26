@@ -21,7 +21,7 @@ export function setPokeStats(newStats) {
 export function incrementSeen(_id) {
     const stats = getPokeStats();
 
-    const poke = findByUnId(stats, _id);
+    const poke = findByUnId(_id, stats);
     if (!poke) {
         const newStat = {
             _id: _id,
@@ -40,7 +40,6 @@ export function incremementCaught(_id) {
     const stats = getPokeStats();
 
     const poke = findByUnId(stats, _id);
-    console.log(poke);
     poke.caught++;
 
     setPokeStats(stats);
