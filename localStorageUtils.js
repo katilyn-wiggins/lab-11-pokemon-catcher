@@ -1,4 +1,5 @@
 import { findByUnId } from './utils.js';
+import pokemon from './data.js';
 
 const POKESTATS = 'POKESTATS';
 
@@ -23,8 +24,9 @@ export function incrementSeen(_id) {
 
     const poke = findByUnId(_id, stats);
     if (!poke) {
-
+        const dataPokemon = findByUnId(_id, pokemon);
         const newStat = {
+            name: dataPokemon.pokebase,
             _id: _id,
             seen: 1,
             caught: 0,
