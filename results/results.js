@@ -1,5 +1,5 @@
 import { makeLabelArray, makeSeenArray, makeCaughtArray } from './mungeUtils.js';
-import { getPokeStats } from '../localStorageUtils.js';
+import { getPokeStats, playAgain } from '../localStorageUtils.js';
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -7,6 +7,8 @@ var ctx2 = document.getElementById('myChart2').getContext('2d');
 
 
 const pokeStats = getPokeStats();
+
+playAgain();
 
 // eslint-disable-next-line 
 var myChart = new Chart(ctx, {
