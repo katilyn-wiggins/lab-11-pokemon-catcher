@@ -53,20 +53,3 @@ export function incremementAllTimeCaught(_id) {
     setAllTimeStats(allStats);
 }
 
-//not needed
-// export function clearPokeStats() {
-//     let stats = [];
-//     localStorage.setItem(POKESTATS, JSON.stringify(stats));
-//     window.location = '../index.html';
-// }
-
-
-// export function playAgain() {
-//     const button = document.getElementById('play-again');
-
-//     button.classList.add('poke-button');
-//     button.addEventListener('click', () => {
-//         //increment or set 
-//         clearPokeStats();
-//     });
-// }

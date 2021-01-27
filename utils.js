@@ -61,10 +61,11 @@ export function setThreePokemon() {
         pokeThree = getRandomPokemon();
     }
 
-    //setting the rendered pokemon images to a constant so they are easier to read
     const img1 = renderPokeImage(pokeOne);
     const img2 = renderPokeImage(pokeTwo);
     const img3 = renderPokeImage(pokeThree);
+    //setting the rendered pokemon images to a constant so they are easier to read
+
 
     //increments the pokemon seen in local data     
     incrementSeen(pokeOne._id);
@@ -87,7 +88,18 @@ export function setThreePokemon() {
 }
 
 
-
+// for (var i = 1; i < array.length; i++) {
+//     previousPoke = array[i]._id;
+//     if (previousPoke === pokeOne._id || pokeTwo._id || pokeThree._id) {
+//         pokeOne = getRandomPokemon();
+//         pokeTwo = getRandomPokemon();
+//         pokeThree = getRandomPokemon();
+//     } else {
+//         //setting the rendered pokemon images to a constant so they are easier to read
+//         const img1 = renderPokeImage(pokeOne);
+//         const img2 = renderPokeImage(pokeTwo);
+//         const img3 = renderPokeImage(pokeThree);
+//     }
 
 
 
