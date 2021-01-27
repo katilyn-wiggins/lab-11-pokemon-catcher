@@ -1,5 +1,6 @@
 import pokemon from './data.js';
 import { incremementCaught, incrementSeen } from './localStorageUtils.js';
+import { incremementAllTimeCaught, incrementAllTimeSeen } from './allTimeStorageUtils.js';
 
 let numberOfTurns = 0;
 
@@ -32,6 +33,7 @@ export function renderPokeImage(pokemonItem) {
     image.addEventListener('click', () => {
         //increment or set 
         incremementCaught(pokemonItem._id);
+        incremementAllTimeCaught(pokemonItem._id);
 
         if (numberOfTurns < 11) {
             setThreePokemon();
@@ -68,6 +70,10 @@ export function setThreePokemon() {
     incrementSeen(pokeOne._id);
     incrementSeen(pokeTwo._id);
     incrementSeen(pokeThree._id);
+
+    incrementAllTimeSeen(pokeOne._id);
+    incrementAllTimeSeen(pokeTwo._id);
+    incrementAllTimeSeen(pokeThree._id);
 
 
     //back to the image, this part grabs the div and nests the images inside the div

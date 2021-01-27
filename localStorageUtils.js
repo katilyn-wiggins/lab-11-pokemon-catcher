@@ -30,6 +30,11 @@ export function incrementSeen(_id) {
             _id: _id,
             seen: 1,
             caught: 0,
+            hp: dataPokemon.hp,
+            height: dataPokemon.height,
+            speed: dataPokemon.speed,
+            attack: dataPokemon.attack,
+            shape: dataPokemon.shape,
         };
         stats.push(newStat);
     } else {
@@ -53,7 +58,6 @@ export function clearPokeStats() {
     localStorage.setItem(POKESTATS, JSON.stringify(stats));
     window.location = '../index.html';
 }
-
 
 
 export function playAgain() {

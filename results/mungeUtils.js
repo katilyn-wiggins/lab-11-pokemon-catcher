@@ -29,3 +29,41 @@ export function makeLabelArray(anArrayOfObjects) {
     }
     return labelArray;
 }
+
+
+export function makeHpArray(anArrayOfObjects) {
+    const hpArray = [];
+
+    for (let item of anArrayOfObjects) {
+        hpArray.push(item.hp);
+    }
+    return hpArray;
+}
+
+
+export function makeHeightArray(anArrayOfObjects) {
+    const heightArray = [];
+
+    for (let item of anArrayOfObjects) {
+        heightArray.push(item.height);
+    }
+    return heightArray;
+}
+
+export function makeSpeedArray(anArrayOfObjects) {
+    const speedArray = [];
+
+    for (let item of anArrayOfObjects) {
+        speedArray.push(item.speed);
+    }
+    return speedArray;
+}
+
+export function makeAttackArray(anArrayOfObjects) {
+    const attackArray = [];
+
+    for (let item of anArrayOfObjects) {
+        attackArray.push(item.attack);
+    }
+    return attackArray;
+}
