@@ -56,7 +56,7 @@ export function incremementCaught(_id) {
 export function clearPokeStats() {
     let stats = [];
     localStorage.setItem(POKESTATS, JSON.stringify(stats));
-    window.location = '../index.html';
+
 }
 
 
@@ -67,5 +67,27 @@ export function playAgain() {
     button.addEventListener('click', () => {
         //increment or set 
         clearPokeStats();
+        window.location = '../index.html';
+    });
+}
+
+export function allTimeResults() {
+    const allTimeButton = document.getElementById('all-time-results');
+
+    allTimeButton.classList.add('all-time-button');
+    allTimeButton.addEventListener('click', () => {
+        //increment or set 
+        window.location.href = '../allresults/index.html';
+    });
+}
+
+
+export function backToSingle() {
+    const backToButton = document.getElementById('single-results');
+
+    backToButton.classList.add('single-results-button');
+    backToButton.addEventListener('click', () => {
+        //increment or set 
+        window.location.href = '../results/index.html';
     });
 }

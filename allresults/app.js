@@ -1,5 +1,6 @@
-import { makeLabelArray, makeSeenArray, makeCaughtArray, makeHpArray, makeHeightArray, makeSpeedArray, makeAttackArray } from './mungeUtils.js';
-import { getPokeStats, playAgain, allTimeResults } from '../localStorageUtils.js';
+import { makeLabelArray, makeSeenArray, makeCaughtArray, makeHpArray, makeHeightArray, makeSpeedArray, makeAttackArray } from '../results/mungeUtils.js';
+import { getAllTimeStats } from '../allTimeStorageUtils.js';
+import { playAgain, backToSingle } from '../localStorageUtils.js';
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -9,19 +10,20 @@ var ctx5 = document.getElementById('myChart5').getContext('2d');
 var ctx6 = document.getElementById('myChart6').getContext('2d');
 
 
-const pokeStats = getPokeStats();
+const allTimeStats = getAllTimeStats();
 
 playAgain();
-allTimeResults();
+backToSingle();
+
 
 // eslint-disable-next-line 
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: makeLabelArray(pokeStats),
+        labels: makeLabelArray(allTimeStats),
         datasets: [{
-            label: 'Times Encountered',
-            data: makeSeenArray(pokeStats),
+            label: 'All Times Encountered',
+            data: makeSeenArray(allTimeStats),
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1
@@ -43,10 +45,10 @@ var myChart = new Chart(ctx, {
 var mySecondChart = new Chart(ctx2, {
     type: 'bar',
     data: {
-        labels: makeLabelArray(pokeStats),
+        labels: makeLabelArray(allTimeStats),
         datasets: [{
-            label: 'Times Captured',
-            data: makeCaughtArray(pokeStats),
+            label: 'All Times Captured',
+            data: makeCaughtArray(allTimeStats),
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1
@@ -69,10 +71,10 @@ var mySecondChart = new Chart(ctx2, {
 var myThirdChart = new Chart(ctx3, {
     type: 'bar',
     data: {
-        labels: makeLabelArray(pokeStats),
+        labels: makeLabelArray(allTimeStats),
         datasets: [{
-            label: 'HP of Pokemon Encountered',
-            data: makeHpArray(pokeStats),
+            label: 'HP of All Pokemon Encountered',
+            data: makeHpArray(allTimeStats),
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1
@@ -94,10 +96,10 @@ var myThirdChart = new Chart(ctx3, {
 var myFourthChart = new Chart(ctx4, {
     type: 'bar',
     data: {
-        labels: makeLabelArray(pokeStats),
+        labels: makeLabelArray(allTimeStats),
         datasets: [{
-            label: 'Height of Pokemon Encountered',
-            data: makeHeightArray(pokeStats),
+            label: 'Height of All Pokemon Encountered',
+            data: makeHeightArray(allTimeStats),
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1
@@ -119,10 +121,10 @@ var myFourthChart = new Chart(ctx4, {
 var myFifthChart = new Chart(ctx5, {
     type: 'bar',
     data: {
-        labels: makeLabelArray(pokeStats),
+        labels: makeLabelArray(allTimeStats),
         datasets: [{
-            label: 'Speed of Pokemon Encountered',
-            data: makeSpeedArray(pokeStats),
+            label: 'Speed of All Pokemon Encountered',
+            data: makeSpeedArray(allTimeStats),
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1
@@ -144,10 +146,10 @@ var myFifthChart = new Chart(ctx5, {
 var mySixthChart = new Chart(ctx6, {
     type: 'bar',
     data: {
-        labels: makeLabelArray(pokeStats),
+        labels: makeLabelArray(allTimeStats),
         datasets: [{
-            label: 'Attack Ability of Pokemon Encountered',
-            data: makeAttackArray(pokeStats),
+            label: 'Attack Ability of All Pokemon Encountered',
+            data: makeAttackArray(allTimeStats),
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1

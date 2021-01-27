@@ -35,7 +35,7 @@ export function renderPokeImage(pokemonItem) {
         incremementCaught(pokemonItem._id);
         incremementAllTimeCaught(pokemonItem._id);
 
-        if (numberOfTurns < 11) {
+        if (numberOfTurns < 10) {
             setThreePokemon();
         } else {
             window.location = 'results';
